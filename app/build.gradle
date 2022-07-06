@@ -19,7 +19,7 @@ android {
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
 
         buildConfigField "String", "SERVER_KEY", "\"${properties.getProperty("SERVER_KEY")}\""
-        buildConfigField "String", "SMS_KEY","\"${properties.getProperty("SMS_KEY")}\""
+        buildConfigField "String", "SMS_KEY", "\"${properties.getProperty("SMS_KEY")}\""
     }
 
     buildTypes {
@@ -29,12 +29,18 @@ android {
         }
     }
 
-    ndkVersion '24.0.8215888'
     externalNativeBuild {
         ndkBuild {
-            path 'src/main/jni/Android.mk'//path of Android.mk file
+            path file('src/main/jni/Android.mk')//path of Android.mk file
+            ndkVersion '24.0.8215888'
         }
+//
+//        cmake{
+//            path file('src/main/cpp/CMakeLists.text')
+//            version '3.18.1'
+//        }
     }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,7 +53,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

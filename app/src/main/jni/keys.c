@@ -10,10 +10,10 @@ Java_com_example_securekeys_MainActivity_getPrivateKey(JNIEnv *env, jobject inst
 
 JNIEXPORT jstring JNICALL
 Java_com_example_securekeys_App_getPrivateAppKey(JNIEnv *env, jobject this) {
-    return (*env)->NewStringUTF(env, "long_private_key");
+    return (*env)->NewStringUTF(env, "Application class private key");
 }
 
 JNIEXPORT jstring JNICALL
 Java_com_example_securekeys_App_getPublicAppKey(JNIEnv *env, jobject this) {
-    return (*env)->  NewStringUTF(env, "long_public_key");
+    return (*env)->  NewStringUTF(env, "Application class public key");
 }
